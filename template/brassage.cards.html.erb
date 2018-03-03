@@ -17,17 +17,36 @@
   </head>
   <body>
 
+<div id='navwrap'>
+<div id='nav'>
+    <p>
+      TEST - Last Update
+    </p>
+    <p class='small'>
+      <%= site.fetched %>
+    </p>
+
+    <p>Subscriptions</p>
+    <ul class='subscriptions small' >
+     <% site.feeds.each do |feed| %>
+      <li>
+        <%= link_to( image_tag('i/feed-icon-10x10.png'), feed.feed_url ) %>
+        <%= link_to feed.title, feed.url %>
+      </li>
+     <% end %>
+     </ul>
+
+    <p>Meta</p>
+    <p class='small'>Powered by <a href='https://github.com/feedreader'>Pluto</a></p>
+</div>
+</div>
+
 
 <div id='opts'>
   <div style='width: 100%; text-align: right;'>
    <img src='i/view-headlines.png' id='show-headlines' title='Show Headlines Only' width='24' height='24'>
    <img src='i/view-snippets.png' id='show-snippets'    title='Show Snippets' width='24' height='24'>
    <img src='i/view-standard.png' id='show-fulltext'    title='Show Full Text' width='24' height='24'>
-  </div>
-  <div style='width: 100%; text-align: right;'>
-    Style | 
-      <%= link_to 'Standard', "#{site.key}.html" %> &bull;
-      <%= link_to 'Cards', "#{site.key}.cards.html" %>    
   </div>
 </div>
 
@@ -66,7 +85,8 @@
 
 <h4 class='feed-title'>
   <span class='feed-title'>
-    <%= link_to item.feed.title, item.feed.url %>
+    <!-- <%= link_to item.feed.title, item.feed.url %> -->
+	<a href='<%= item.feed.url %>' target='_blank'><%= item.feed.title %></a>
   </span>
   <span class='item-published'>
      - 
@@ -82,7 +102,8 @@
   <i class='icon-caret-down item-collapse item-close item-opened'></i>
   <i class='icon-caret-right item-expand item-open item-closed'></i>
   <span class='item-title'>
-    <%= link_to item.title, item.url %>
+    <!-- <%= link_to item.title, item.url %> -->
+	<a href='<%= item.url %>' target='_blank'><%= item.title %></a>
    </span>
 </h3>
 
