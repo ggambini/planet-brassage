@@ -17,14 +17,18 @@
   </head>
   <body>
 
-<div id='navwrap'>
 <div id='nav'>
-    <p>
-      TEST - Last Update
-    </p>
+    <h3>
+      <%= site.title %>
+    </h3>
     <p class='small'>
-      <%= site.fetched %>
+      {lastUpdate}
     </p>
+    <div style='width: 100%; text-align: right;'>
+      <img src='i/view-headlines.png' id='show-headlines' title='Show Headlines Only' width='24' height='24'>
+      <img src='i/view-snippets.png' id='show-snippets'    title='Show Snippets' width='24' height='24'>
+      <img src='i/view-standard.png' id='show-fulltext'    title='Show Full Text' width='24' height='24'>
+   </div>
 
     <p>Subscriptions</p>
     <ul class='subscriptions small' >
@@ -39,27 +43,6 @@
     <p>Meta</p>
     <p class='small'>Powered by <a href='https://github.com/feedreader'>Pluto</a></p>
 </div>
-</div>
-
-
-<div id='opts'>
-  <div style='width: 100%; text-align: right;'>
-   <img src='i/view-headlines.png' id='show-headlines' title='Show Headlines Only' width='24' height='24'>
-   <img src='i/view-snippets.png' id='show-snippets'    title='Show Snippets' width='24' height='24'>
-   <img src='i/view-standard.png' id='show-fulltext'    title='Show Full Text' width='24' height='24'>
-  </div>
-</div>
-
-
-<h1>
-  <%= site.title %>
-  <span class='small'>
-  Last Update:
-   <% if site.fetched %>
-    <%= site.fetched.strftime('%A, %d. %B %Y %H:%M') %>
-   <% end %>
-  </span>
-</h1>
 
 
 <!-- use a table w/ two colums -->
