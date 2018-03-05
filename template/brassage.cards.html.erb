@@ -35,13 +35,16 @@
      <% site.feeds.each do |feed| %>
       <li>
         <%= link_to( image_tag('i/feed-icon-10x10.png'), feed.feed_url ) %>
-        <%= link_to feed.title, feed.url %>
+        <!-- <%= link_to feed.title, feed.url %> -->
+	<a href='<%= feed.url %>' target='_blank'><%= feed.title %></a>
       </li>
      <% end %>
      </ul>
 
-    <p>Meta</p>
-    <p class='small'>Powered by <a href='https://github.com/feedreader'>Pluto</a></p>
+    <p>A propos</p>
+    <p class='small'>Powered by <a href='https://github.com/feedreader'>Pluto</a><br/>
+	Customized by <a href='https://github.com/ggambini/planet-brassage'>Gamb</a>
+    </p>
 </div>
 
 
