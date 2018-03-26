@@ -17,7 +17,7 @@
 		if [[ "$logFile" != "" ]]
 		then
 			now=`date +%d/%m/%y-%H:%M:%S`
-                        echo "$now - $message" >> $LOG_FILE
+                        echo "$now - $message" >> $logFile
 		else
 			echo $message
 		fi
